@@ -12,7 +12,15 @@ int main() {
     std::cout << "$ ";
     std::string command;
     std::getline(std::cin, command);
+
+    //to exit REPL
     if(command=="exit") break;
-    std::cout<<command<<": command not found"<<std::endl;
+
+    //echo command
+    if(command.substr(0,5)=="echo "){
+      std::cout<<command.substr(6)<<std::endl;
+    }else{
+      std::cout<<command<<": command not found"<<std::endl;
+    }
   }
 }
