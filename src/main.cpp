@@ -27,7 +27,7 @@ int main() {
       if(std::find(type_value.begin(),type_value.end(),command.substr(5))!=type_value.end()){
         std::cout<<command.substr(5)<<" is a shell builtin"<<std::endl;
       }else{
-        std::cout<<command<<": command not found"<<std::endl;
+        std::cout<<command.substr(5)<<": command not found"<<std::endl;
       }
     }else{
       std::cout<<command<<": command not found"<<std::endl;
