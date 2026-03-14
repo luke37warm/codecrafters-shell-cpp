@@ -56,7 +56,7 @@ int main() {
         }
       }
       if(!found){
-        std::cout<<command<<": not found"<<std::endl;
+        std::cout<<command_to_know<<": not found"<<std::endl;
       }
     }
     else{
