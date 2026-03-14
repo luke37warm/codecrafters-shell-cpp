@@ -38,12 +38,11 @@ int main() {
       bool found=false;
       std::string command_to_know;
       ss>>command_to_know;
-
       if(std::find(type_value.begin(),type_value.end(),command_to_know)!=type_value.end()){
         std::cout<<command_to_know<<" is a shell builtin"<<std::endl; 
         found=true;
       }
-      if(!found){
+      if(!found && !command_to_know.empty()){
         std::string path_env=std::getenv("PATH");
         std::stringstream ss_path(path_env);
         std::string path;
@@ -57,7 +56,7 @@ int main() {
         }
       }
       if(!found){
-        std::cout<<command.substr(5)<<": not found"<<std::endl;
+        std::cout<<command<<": not found"<<std::endl;
       }
     }
     else{
